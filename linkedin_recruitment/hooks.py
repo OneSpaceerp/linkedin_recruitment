@@ -7,14 +7,14 @@ app_license = "GNU General Public License (v3)"
 
 required_apps = ["frappe/erpnext", "frappe/hrms"]
 
-app_logo_url = "/assets/linkedin_recruitment/images/linkedin-recruitment-logo.png"
+app_logo_url = "/assets/linkedin_recruitment/images/linkedin-erpnext-logo.png"
 app_home = "/desk/linkedin-recruitment"
 
 # The app grid tile opens the LinkedIn Recruitment desk
 add_to_apps_screen = [
     {
         "name": "linkedin_recruitment",
-        "logo": "/assets/linkedin_recruitment/images/linkedin-recruitment-logo.png",
+        "logo": "/assets/linkedin_recruitment/images/linkedin-erpnext-logo.png",
         "title": "LinkedIn Recruitment",
         "route": app_home,
         "has_permission": "linkedin_recruitment.api.app.check_app_permission",

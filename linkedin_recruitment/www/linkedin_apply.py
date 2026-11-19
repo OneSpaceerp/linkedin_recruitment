@@ -40,7 +40,7 @@ def get_context(context):
     context.start_url = f"/api/method/linkedin_recruitment.api.apply.start?job={quote(job)}"
     context.require_consent = cint(settings.require_consent)
     context.privacy_notice = sanitize_html(settings.privacy_notice or "")
-    context.logo = "/assets/linkedin_recruitment/images/linkedin-recruitment-logo.png"
+    context.logo = "/assets/linkedin_recruitment/images/linkedin-signin.png"
     context.csrf_token = frappe.sessions.get_csrf_token()
     context.metatags = {"title": context.title, "description": jo.job_title if jo else ""}
     return context
