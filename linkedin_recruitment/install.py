@@ -24,12 +24,18 @@ EXPERIENCE = "\nENTRY_LEVEL\nASSOCIATE\nMID_SENIOR_LEVEL\nDIRECTOR\nEXECUTIVE\nI
 
 
 def before_install():
-    """Roles must exist before DocType permissions that name them are synced."""
+    """Runs before anything of this app is saved (also before every migrate).
+
+    Roles must exist before DocType permissions that name them are synced, and the 'LinkedIn'
+    Job Applicant Source before Frappe's post-install `init_singles` saves LinkedIn Settings,
+    whose Job Applicant Source field defaults to it (a missing link aborts the install).
+    """
     for role, description in ROLES.items():
         if not frappe.db.exists("Role", role):
             frappe.get_doc({"doctype": "Role", "role_name": role, "desk_access": 1, "description": description}).insert(
                 ignore_permissions=True
             )
+    seed_applicant_source()
 
 
 def after_install():
@@ -125,7 +131,9 @@ def seed_job_functions():
 
 def seed_applicant_source():
     if frappe.db.table_exists("Job Applicant Source") and not frappe.db.exists("Job Applicant Source", "LinkedIn"):
-        frappe.get_doc({"doctype": "Job Applicant Source", "source_name": "LinkedIn"}).insert(ignore_permissions=True)
+        frappe.get_doc({"doctype": "Job Applicant Source", "source_name": "LinkedIn"}).insert(
+            ignore_permissions=True, ignore_if_duplicate=True
+        )
 
 
 def settings_defaults():
