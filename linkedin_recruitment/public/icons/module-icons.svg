@@ -23,10 +23,11 @@
 		<path class="li-motion" d="M9.2 13.8h4.6l-1.5-1.5a.9.9 0 0 1 1.3-1.3l3 3a.9.9 0 0 1 0 1.3l-3 3a.9.9 0 1 1-1.3-1.3l1.5-1.5H9.2a.85.85 0 0 1 0-1.7Z" style="fill: var(--duotone-dark, light-dark(var(--ink-gray-5), var(--ink-gray-6)))" />
 	</symbol>
 	<symbol id="icon-li-app-soft" viewBox="0 0 24 24" class="soft-icon">
-		<rect x="3" y="7" width="18" height="12.5" rx="2.8" class="soft-layer" />
-		<rect x="3" y="7" width="18" height="12.5" rx="2.8" class="soft-body" />
-		<path d="M9 7V5.6A1.6 1.6 0 0 1 10.6 4h2.8A1.6 1.6 0 0 1 15 5.6V7" fill="none" />
-		<path d="M9 13.3h6m-2.2-2.3 2.3 2.3-2.3 2.3" fill="none" />
+		<rect x="3" y="7" width="18" height="13" rx="2.5" class="soft-body"/>
+		<path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7"/>
+		<path d="M3 12.5h18"/>
+		<rect x="10" y="11" width="4" height="3" rx="1" class="soft-accent"/>
+		<rect x="10" y="11" width="4" height="3" rx="1"/>
 	</symbol>
 
 	<!-- LinkedIn Talent: applicant with a check -->
@@ -37,12 +38,10 @@
 		<path class="li-motion" d="m15.6 17 1.3 1.3 2.6-2.6" fill="none" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" style="stroke: var(--duotone-light, var(--ink-gray-3))" />
 	</symbol>
 	<symbol id="icon-li-linkedin-talent-soft" viewBox="0 0 24 24" class="soft-icon">
-		<circle cx="9.5" cy="7.5" r="3.6" class="soft-layer" />
-		<path d="M3 19.5c0-3.5 2.9-6 6.5-6 1.4 0 2.7.4 3.8 1.1" class="soft-body" />
-		<circle cx="9.5" cy="7.5" r="3.6" fill="none" />
-		<path d="M3 19.5c0-3.5 2.9-6 6.5-6 1.4 0 2.7.4 3.8 1.1" fill="none" />
-		<circle cx="17.5" cy="17" r="4" class="soft-body" />
-		<path d="m15.7 17 1.2 1.2 2.4-2.4" fill="none" />
+		<circle cx="9.5" cy="7.5" r="3.5" class="soft-body"/>
+		<path d="M3 20c0-3.6 2.9-6.5 6.5-6.5 1.3 0 2.5.4 3.5 1"/>
+		<circle cx="17.5" cy="17" r="4" class="soft-accent"/>
+		<path d="m15.8 17 1.2 1.2 2.3-2.4"/>
 	</symbol>
 
 	<!-- LinkedIn Sync: two arrows in a loop -->
@@ -52,10 +51,10 @@
 		<circle class="li-motion" cx="12" cy="12" r="2.2" style="fill: var(--duotone-dark, light-dark(var(--ink-gray-5), var(--ink-gray-6)))" />
 	</symbol>
 	<symbol id="icon-li-linkedin-sync-soft" viewBox="0 0 24 24" class="soft-icon">
-		<circle cx="12" cy="12" r="7.5" class="soft-layer" />
-		<circle cx="12" cy="12" r="2.5" class="soft-body" />
-		<path d="M4.6 10.2A7.6 7.6 0 0 1 19 8.3m.5-3v3.4h-3.4" fill="none" />
-		<path d="M19.4 13.8A7.6 7.6 0 0 1 5 15.7m-.5 3v-3.4h3.4" fill="none" />
+		<circle cx="12" cy="12" r="7.5" class="soft-body"/>
+		<path d="M4.5 11A7.5 7.5 0 0 1 18.4 8M19 4.5V8h-3.5"/>
+		<path d="M19.5 13A7.5 7.5 0 0 1 5.6 16M5 19.5V16h3.5"/>
+		<circle cx="12" cy="12" r="2" class="soft-accent"/>
 	</symbol>
 
 	<!-- LinkedIn Recruitment Setup: sliders -->
@@ -68,10 +67,10 @@
 		<circle cx="10" cy="17.6" r="2.6" style="fill: var(--duotone-dark, light-dark(var(--ink-gray-5), var(--ink-gray-6)))" />
 	</symbol>
 	<symbol id="icon-li-setup-soft" viewBox="0 0 24 24" class="soft-icon">
-		<rect x="3.5" y="4" width="17" height="16" rx="3.5" class="soft-layer" />
-		<circle cx="8.5" cy="8" r="2" class="soft-body" />
-		<circle cx="15.5" cy="12" r="2" class="soft-body" />
-		<circle cx="10" cy="16" r="2" class="soft-body" />
-		<path d="M4 8h2.5m4 0H20M4 12h9.5m4 0H20M4 16h4m4 0h8" fill="none" />
+		<path d="M4 7h3m4 0h9M4 12h9m4 0h3M4 17h1.5m4 0h10.5"/>
+		<circle cx="9" cy="7" r="2" class="soft-body"/>
+		<circle cx="15" cy="12" r="2" class="soft-accent"/>
+		<path d="M17 12a2 2 0 1 1-4 0 2 2 0 0 1 4 0Z"/>
+		<circle cx="7.5" cy="17" r="2" class="soft-body"/>
 	</symbol>
 </svg>
