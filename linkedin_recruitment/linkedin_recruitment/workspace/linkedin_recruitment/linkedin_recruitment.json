@@ -1,0 +1,109 @@
+{
+ "app": "linkedin_recruitment",
+ "charts": [
+  {
+   "chart_name": "LinkedIn Applicants per Week",
+   "label": "LinkedIn Applicants per Week"
+  }
+ ],
+ "content": "[{\"id\": \"licard0\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"Live LinkedIn Jobs\", \"col\": 3}}, {\"id\": \"licard1\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"LinkedIn Applicants This Month\", \"col\": 3}}, {\"id\": \"licard2\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"LinkedIn Applicants Needing Attention\", \"col\": 3}}, {\"id\": \"licard3\", \"type\": \"number_card\", \"data\": {\"number_card_name\": \"LinkedIn Sync Errors This Week\", \"col\": 3}}, {\"id\": \"lichart0\", \"type\": \"chart\", \"data\": {\"chart_name\": \"LinkedIn Applicants per Week\", \"col\": 12}}, {\"id\": \"lihead1\", \"type\": \"header\", \"data\": {\"text\": \"<span class=\\\"h4\\\"><b>Quick Access</b></span>\", \"col\": 12}}, {\"id\": \"lishort0\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"Job Opening\", \"col\": 3}}, {\"id\": \"lishort1\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Job Posting\", \"col\": 3}}, {\"id\": \"lishort2\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Post\", \"col\": 3}}, {\"id\": \"lishort3\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Applicant\", \"col\": 3}}, {\"id\": \"lishort4\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Applicant Import\", \"col\": 3}}, {\"id\": \"lishort5\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Hiring Funnel\", \"col\": 3}}, {\"id\": \"lishort6\", \"type\": \"shortcut\", \"data\": {\"shortcut_name\": \"LinkedIn Settings\", \"col\": 3}}]",
+ "creation": "2026-11-19 12:00:00.000000",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "briefcase",
+ "idx": 0,
+ "indicator_color": "blue",
+ "is_hidden": 0,
+ "label": "LinkedIn Recruitment",
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Recruitment",
+ "number_cards": [
+  {
+   "label": "Live LinkedIn Jobs",
+   "number_card_name": "Live LinkedIn Jobs"
+  },
+  {
+   "label": "LinkedIn Applicants This Month",
+   "number_card_name": "LinkedIn Applicants This Month"
+  },
+  {
+   "label": "LinkedIn Applicants Needing Attention",
+   "number_card_name": "LinkedIn Applicants Needing Attention"
+  },
+  {
+   "label": "LinkedIn Sync Errors This Week",
+   "number_card_name": "LinkedIn Sync Errors This Week"
+  }
+ ],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 40.0,
+ "shortcuts": [
+  {
+   "label": "Job Opening",
+   "type": "DocType",
+   "link_to": "Job Opening",
+   "color": "Blue",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Job Posting",
+   "type": "DocType",
+   "link_to": "LinkedIn Job Posting",
+   "color": "Blue",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Post",
+   "type": "DocType",
+   "link_to": "LinkedIn Post",
+   "color": "Cyan",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Applicant",
+   "type": "DocType",
+   "link_to": "LinkedIn Applicant",
+   "color": "Green",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Applicant Import",
+   "type": "DocType",
+   "link_to": "LinkedIn Applicant Import",
+   "color": "Grey",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Hiring Funnel",
+   "type": "Report",
+   "link_to": "LinkedIn Hiring Funnel",
+   "color": "Purple",
+   "doc_view": "",
+   "stats_filter": ""
+  },
+  {
+   "label": "LinkedIn Settings",
+   "type": "DocType",
+   "link_to": "LinkedIn Settings",
+   "color": "Grey",
+   "doc_view": "",
+   "stats_filter": ""
+  }
+ ],
+ "title": "LinkedIn Recruitment"
+}

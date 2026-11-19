@@ -1,0 +1,211 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "LI-POST-.#####",
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_opening",
+  "account",
+  "post_as",
+  "organization_urn",
+  "col1",
+  "status",
+  "post_url",
+  "post_urn",
+  "published_on",
+  "content_section",
+  "commentary",
+  "hashtags",
+  "col2",
+  "visibility",
+  "link_url",
+  "link_title",
+  "link_description",
+  "error_section",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_opening",
+   "fieldtype": "Link",
+   "label": "Job Opening",
+   "options": "Job Opening",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "account",
+   "fieldtype": "Link",
+   "label": "LinkedIn Account",
+   "options": "LinkedIn Account",
+   "reqd": 1
+  },
+  {
+   "fieldname": "post_as",
+   "fieldtype": "Select",
+   "label": "Post As",
+   "options": "Organization\nMember",
+   "default": "Organization"
+  },
+  {
+   "fieldname": "organization_urn",
+   "fieldtype": "Data",
+   "label": "Organization URN",
+   "depends_on": "eval:doc.post_as=='Organization'",
+   "description": "Defaults to the account's default organization."
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nPublished\nFailed\nDeleted",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "post_url",
+   "fieldtype": "Data",
+   "label": "Post on LinkedIn",
+   "options": "URL",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "post_urn",
+   "fieldtype": "Data",
+   "label": "Post URN",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "published_on",
+   "fieldtype": "Datetime",
+   "label": "Published On",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "content_section",
+   "fieldtype": "Section Break",
+   "label": "Content"
+  },
+  {
+   "fieldname": "commentary",
+   "fieldtype": "Text",
+   "label": "Post Text",
+   "reqd": 1
+  },
+  {
+   "fieldname": "hashtags",
+   "fieldtype": "Small Text",
+   "label": "Hashtags"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "visibility",
+   "fieldtype": "Select",
+   "label": "Visibility",
+   "options": "PUBLIC\nCONNECTIONS",
+   "default": "PUBLIC"
+  },
+  {
+   "fieldname": "link_url",
+   "fieldtype": "Data",
+   "label": "Link",
+   "options": "URL"
+  },
+  {
+   "fieldname": "link_title",
+   "fieldtype": "Data",
+   "label": "Link Title"
+  },
+  {
+   "fieldname": "link_description",
+   "fieldtype": "Small Text",
+   "label": "Link Description"
+  },
+  {
+   "fieldname": "error_section",
+   "fieldtype": "Section Break",
+   "label": "Last Error",
+   "depends_on": "error_message"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Post",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LinkedIn Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "job_opening",
+ "track_changes": 1
+}

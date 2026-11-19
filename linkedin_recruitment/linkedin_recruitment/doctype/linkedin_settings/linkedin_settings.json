@@ -1,0 +1,521 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "connection_tab",
+  "enabled",
+  "app_section",
+  "client_id",
+  "client_secret",
+  "app_col",
+  "redirect_uri",
+  "webhook_url",
+  "company_section",
+  "organization_id",
+  "integration_context",
+  "company_col",
+  "company_name",
+  "company_page_url",
+  "version_section",
+  "talent_api_version",
+  "version_col",
+  "marketing_api_version",
+  "jobs_tab",
+  "enable_job_posting_api",
+  "auto_publish",
+  "close_with_job_opening",
+  "external_id_prefix",
+  "jobs_col",
+  "listing_type",
+  "contract_urn",
+  "poster_email",
+  "defaults_section",
+  "default_workplace_type",
+  "default_experience_level",
+  "default_industries",
+  "defaults_col",
+  "apply_url_mode",
+  "custom_apply_url",
+  "apply_connect_section",
+  "enable_apply_connect",
+  "resume_required",
+  "apply_connect_col",
+  "apply_questions_json",
+  "posts_tab",
+  "enable_company_posts",
+  "auto_post",
+  "post_account",
+  "post_as",
+  "posts_col",
+  "post_visibility",
+  "hashtags",
+  "extra_scopes",
+  "template_section",
+  "post_template",
+  "applicants_tab",
+  "enable_webhook",
+  "create_job_applicant",
+  "download_resume",
+  "applicants_col",
+  "applicant_source",
+  "store_raw_payload",
+  "apply_page_section",
+  "enable_apply_with_linkedin",
+  "require_consent",
+  "apply_page_col",
+  "privacy_notice",
+  "logs_tab",
+  "log_request_bodies",
+  "logs_col",
+  "log_retention_days",
+  "webhook_retention_days"
+ ],
+ "fields": [
+  {
+   "fieldname": "connection_tab",
+   "fieldtype": "Tab Break",
+   "label": "Connection"
+  },
+  {
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enable LinkedIn Integration"
+  },
+  {
+   "fieldname": "app_section",
+   "fieldtype": "Section Break",
+   "label": "LinkedIn Developer App",
+   "description": "From linkedin.com/developers: open your app, then the Auth tab."
+  },
+  {
+   "fieldname": "client_id",
+   "fieldtype": "Data",
+   "label": "Client ID",
+   "mandatory_depends_on": "enabled"
+  },
+  {
+   "fieldname": "client_secret",
+   "fieldtype": "Password",
+   "label": "Client Secret",
+   "mandatory_depends_on": "enabled",
+   "length": 255
+  },
+  {
+   "fieldname": "app_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "redirect_uri",
+   "fieldtype": "Data",
+   "label": "Authorized Redirect URL",
+   "read_only": 1,
+   "is_virtual": 1,
+   "description": "Add this URL under Authorized redirect URLs in the LinkedIn app."
+  },
+  {
+   "fieldname": "webhook_url",
+   "fieldtype": "Data",
+   "label": "Apply Connect Webhook URL",
+   "read_only": 1,
+   "is_virtual": 1,
+   "description": "Sent to LinkedIn with each Apply Connect job. The site must be served over HTTPS."
+  },
+  {
+   "fieldname": "company_section",
+   "fieldtype": "Section Break",
+   "label": "Hiring Company on LinkedIn"
+  },
+  {
+   "fieldname": "organization_id",
+   "fieldtype": "Data",
+   "label": "LinkedIn Organization ID",
+   "description": "The number in your company page admin URL, e.g. linkedin.com/company/12345678/admin."
+  },
+  {
+   "fieldname": "integration_context",
+   "fieldtype": "Data",
+   "label": "Integration Context",
+   "description": "Only for Apply Connect / RSC customers: the value from LinkedIn's onboarding widget. Overrides the Organization ID."
+  },
+  {
+   "fieldname": "company_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "company_name",
+   "fieldtype": "Data",
+   "label": "Company Name on LinkedIn",
+   "description": "Used when no Organization ID is set."
+  },
+  {
+   "fieldname": "company_page_url",
+   "fieldtype": "Data",
+   "label": "Company Page URL",
+   "options": "URL"
+  },
+  {
+   "fieldname": "version_section",
+   "fieldtype": "Section Break",
+   "label": "API Versions",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "talent_api_version",
+   "fieldtype": "Data",
+   "label": "Talent API Version",
+   "default": "202604",
+   "description": "LinkedIn-Version header (YYYYMM) for job postings and Apply Connect."
+  },
+  {
+   "fieldname": "version_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "marketing_api_version",
+   "fieldtype": "Data",
+   "label": "Marketing API Version",
+   "default": "202611",
+   "description": "LinkedIn-Version header (YYYYMM) for company page posts. LinkedIn retires each version after about a year."
+  },
+  {
+   "fieldname": "jobs_tab",
+   "fieldtype": "Tab Break",
+   "label": "Job Postings"
+  },
+  {
+   "fieldname": "enable_job_posting_api",
+   "fieldtype": "Check",
+   "label": "Publish Jobs through the Job Posting API",
+   "description": "Needs LinkedIn Job Posting API partner access for this developer app (client credentials)."
+  },
+  {
+   "fieldname": "auto_publish",
+   "fieldtype": "Check",
+   "label": "Publish Automatically",
+   "depends_on": "enable_job_posting_api",
+   "description": "Publish, update and close the LinkedIn job when a Job Opening marked 'Publish on LinkedIn' is saved."
+  },
+  {
+   "fieldname": "close_with_job_opening",
+   "fieldtype": "Check",
+   "label": "Close on LinkedIn when the Job Opening Closes",
+   "default": "1",
+   "depends_on": "enable_job_posting_api"
+  },
+  {
+   "fieldname": "external_id_prefix",
+   "fieldtype": "Data",
+   "label": "External Job ID Prefix",
+   "depends_on": "enable_job_posting_api",
+   "description": "Makes job ids unique when several sites share one LinkedIn app. Set once; changing it creates new LinkedIn jobs."
+  },
+  {
+   "fieldname": "jobs_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "listing_type",
+   "fieldtype": "Select",
+   "label": "Listing Type",
+   "options": "BASIC\nPREMIUM",
+   "default": "BASIC",
+   "depends_on": "enable_job_posting_api"
+  },
+  {
+   "fieldname": "contract_urn",
+   "fieldtype": "Data",
+   "label": "Contract URN",
+   "depends_on": "eval:doc.listing_type=='PREMIUM'",
+   "mandatory_depends_on": "eval:doc.enable_job_posting_api && doc.listing_type=='PREMIUM'",
+   "description": "urn:li:contract:... from LinkedIn's promoted-jobs onboarding."
+  },
+  {
+   "fieldname": "poster_email",
+   "fieldtype": "Data",
+   "label": "Job Poster Email",
+   "options": "Email",
+   "depends_on": "enable_job_posting_api"
+  },
+  {
+   "fieldname": "defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Defaults for New LinkedIn Jobs"
+  },
+  {
+   "fieldname": "default_workplace_type",
+   "fieldtype": "Select",
+   "label": "Workplace Type",
+   "options": "On-site\nHybrid\nRemote",
+   "default": "On-site"
+  },
+  {
+   "fieldname": "default_experience_level",
+   "fieldtype": "Select",
+   "label": "Experience Level",
+   "options": "\nENTRY_LEVEL\nASSOCIATE\nMID_SENIOR_LEVEL\nDIRECTOR\nEXECUTIVE\nINTERNSHIP\nNOT_APPLICABLE"
+  },
+  {
+   "fieldname": "default_industries",
+   "fieldtype": "Data",
+   "label": "Industry Codes",
+   "description": "Comma separated LinkedIn industry ids, e.g. 4 (Software Development), 96 (IT Services)."
+  },
+  {
+   "fieldname": "defaults_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "apply_url_mode",
+   "fieldtype": "Select",
+   "label": "Apply URL",
+   "options": "Job Opening Page\nApply with LinkedIn Page\nCustom URL",
+   "default": "Job Opening Page"
+  },
+  {
+   "fieldname": "custom_apply_url",
+   "fieldtype": "Data",
+   "label": "Custom Apply URL",
+   "depends_on": "eval:doc.apply_url_mode=='Custom URL'",
+   "mandatory_depends_on": "eval:doc.apply_url_mode=='Custom URL'",
+   "description": "{job} is replaced by the Job Opening id, {route} by its web route."
+  },
+  {
+   "fieldname": "apply_connect_section",
+   "fieldtype": "Section Break",
+   "label": "Apply Connect (LinkedIn Easy Apply into Frappe HR)",
+   "description": "Partner feature: LinkedIn collects the application and posts it to this site's webhook."
+  },
+  {
+   "fieldname": "enable_apply_connect",
+   "fieldtype": "Check",
+   "label": "Use Apply Connect for New Jobs"
+  },
+  {
+   "fieldname": "resume_required",
+   "fieldtype": "Check",
+   "label": "Resume Required",
+   "default": "1",
+   "depends_on": "enable_apply_connect"
+  },
+  {
+   "fieldname": "apply_connect_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "apply_questions_json",
+   "fieldtype": "Code",
+   "label": "Question Set (JSON)",
+   "options": "JSON",
+   "depends_on": "enable_apply_connect",
+   "description": "Optional onsiteApplyConfiguration.questions. Leave empty for contact details and a resume."
+  },
+  {
+   "fieldname": "posts_tab",
+   "fieldtype": "Tab Break",
+   "label": "Company Posts"
+  },
+  {
+   "fieldname": "enable_company_posts",
+   "fieldtype": "Check",
+   "label": "Announce Job Openings on LinkedIn",
+   "description": "Posts with the Posts API. Organization posts need the Community Management API product."
+  },
+  {
+   "fieldname": "auto_post",
+   "fieldtype": "Check",
+   "label": "Post Automatically",
+   "depends_on": "enable_company_posts",
+   "description": "Post once when a Job Opening marked 'Announce on LinkedIn' is opened."
+  },
+  {
+   "fieldname": "post_account",
+   "fieldtype": "Link",
+   "label": "Post With Account",
+   "options": "LinkedIn Account",
+   "depends_on": "enable_company_posts"
+  },
+  {
+   "fieldname": "post_as",
+   "fieldtype": "Select",
+   "label": "Post As",
+   "options": "Organization\nMember",
+   "default": "Organization",
+   "depends_on": "enable_company_posts"
+  },
+  {
+   "fieldname": "posts_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "post_visibility",
+   "fieldtype": "Select",
+   "label": "Visibility",
+   "options": "PUBLIC\nCONNECTIONS",
+   "default": "PUBLIC",
+   "depends_on": "enable_company_posts"
+  },
+  {
+   "fieldname": "hashtags",
+   "fieldtype": "Small Text",
+   "label": "Hashtags",
+   "default": "hiring, jobs",
+   "depends_on": "enable_company_posts",
+   "description": "Separate tags with commas."
+  },
+  {
+   "fieldname": "extra_scopes",
+   "fieldtype": "Data",
+   "label": "Extra OAuth Scopes",
+   "description": "Space separated scopes to request in addition to the ones the enabled features need."
+  },
+  {
+   "fieldname": "template_section",
+   "fieldtype": "Section Break",
+   "label": "Post Text",
+   "depends_on": "enable_company_posts"
+  },
+  {
+   "fieldname": "post_template",
+   "fieldtype": "Text",
+   "label": "Post Text Template",
+   "default": "We're hiring! Join {{ doc.company }} as {{ doc.job_title }}{% if location %} in {{ location }}{% endif %}.\n\nApply here: {{ apply_url }}",
+   "description": "Jinja. Available: doc (the Job Opening), location, apply_url."
+  },
+  {
+   "fieldname": "applicants_tab",
+   "fieldtype": "Tab Break",
+   "label": "Applicants"
+  },
+  {
+   "fieldname": "enable_webhook",
+   "fieldtype": "Check",
+   "label": "Accept Applications from LinkedIn",
+   "description": "Answer LinkedIn's webhook validation and store Apply Connect applications."
+  },
+  {
+   "fieldname": "create_job_applicant",
+   "fieldtype": "Check",
+   "label": "Create Job Applicants",
+   "default": "1"
+  },
+  {
+   "fieldname": "download_resume",
+   "fieldtype": "Check",
+   "label": "Download Resumes",
+   "default": "1",
+   "description": "LinkedIn resume links expire after 30 days; downloaded files are kept as private attachments."
+  },
+  {
+   "fieldname": "applicants_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "applicant_source",
+   "fieldtype": "Link",
+   "label": "Job Applicant Source",
+   "options": "Job Applicant Source",
+   "default": "LinkedIn"
+  },
+  {
+   "fieldname": "store_raw_payload",
+   "fieldtype": "Check",
+   "label": "Keep the Application Payload",
+   "default": "1",
+   "description": "For audit. Voluntary self-identification answers are always removed first."
+  },
+  {
+   "fieldname": "apply_page_section",
+   "fieldtype": "Section Break",
+   "label": "Apply with LinkedIn (career page)"
+  },
+  {
+   "fieldname": "enable_apply_with_linkedin",
+   "fieldtype": "Check",
+   "label": "Enable /linkedin-apply Page",
+   "description": "Candidates sign in with LinkedIn (name and verified email) and upload a CV. Uses 'Sign In with LinkedIn using OpenID Connect'."
+  },
+  {
+   "fieldname": "require_consent",
+   "fieldtype": "Check",
+   "label": "Require Privacy Consent",
+   "default": "1"
+  },
+  {
+   "fieldname": "apply_page_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "privacy_notice",
+   "fieldtype": "Text Editor",
+   "label": "Privacy Notice"
+  },
+  {
+   "fieldname": "logs_tab",
+   "fieldtype": "Tab Break",
+   "label": "Logs"
+  },
+  {
+   "fieldname": "log_request_bodies",
+   "fieldtype": "Check",
+   "label": "Store Request and Response Bodies",
+   "default": "1",
+   "description": "Tokens and secrets are never stored."
+  },
+  {
+   "fieldname": "logs_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "log_retention_days",
+   "fieldtype": "Int",
+   "label": "Keep Sync Logs (days)",
+   "default": "90"
+  },
+  {
+   "fieldname": "webhook_retention_days",
+   "fieldtype": "Int",
+   "label": "Keep Webhook Events (days)",
+   "default": "180"
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "issingle": 1,
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "LinkedIn Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 0
+}

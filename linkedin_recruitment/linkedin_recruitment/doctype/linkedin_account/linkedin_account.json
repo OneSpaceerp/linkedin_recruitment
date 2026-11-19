@@ -1,0 +1,197 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "field:account_name",
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "account_name",
+  "status",
+  "col1",
+  "connected_by",
+  "connected_on",
+  "member_section",
+  "member_name",
+  "member_email",
+  "member_urn",
+  "col2",
+  "picture_url",
+  "scopes",
+  "expires_at",
+  "refresh_expires_at",
+  "access_token",
+  "refresh_token",
+  "org_section",
+  "default_organization",
+  "organizations"
+ ],
+ "fields": [
+  {
+   "fieldname": "account_name",
+   "fieldtype": "Data",
+   "label": "Account Name",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Not Connected\nConnected\nExpired\nRevoked",
+   "default": "Not Connected",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "connected_by",
+   "fieldtype": "Link",
+   "label": "Connected By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "connected_on",
+   "fieldtype": "Datetime",
+   "label": "Connected On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "member_section",
+   "fieldtype": "Section Break",
+   "label": "LinkedIn Member"
+  },
+  {
+   "fieldname": "member_name",
+   "fieldtype": "Data",
+   "label": "Member Name",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "member_email",
+   "fieldtype": "Data",
+   "label": "Member Email",
+   "options": "Email",
+   "read_only": 1
+  },
+  {
+   "fieldname": "member_urn",
+   "fieldtype": "Data",
+   "label": "Member URN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "picture_url",
+   "fieldtype": "Data",
+   "label": "Picture URL",
+   "read_only": 1,
+   "hidden": 1
+  },
+  {
+   "fieldname": "scopes",
+   "fieldtype": "Small Text",
+   "label": "Granted Scopes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "expires_at",
+   "fieldtype": "Datetime",
+   "label": "Access Token Expires",
+   "read_only": 1
+  },
+  {
+   "fieldname": "refresh_expires_at",
+   "fieldtype": "Datetime",
+   "label": "Refresh Token Expires",
+   "read_only": 1
+  },
+  {
+   "fieldname": "access_token",
+   "fieldtype": "Password",
+   "label": "Access Token",
+   "hidden": 1,
+   "read_only": 1,
+   "length": 2000
+  },
+  {
+   "fieldname": "refresh_token",
+   "fieldtype": "Password",
+   "label": "Refresh Token",
+   "hidden": 1,
+   "read_only": 1,
+   "length": 2000
+  },
+  {
+   "fieldname": "org_section",
+   "fieldtype": "Section Break",
+   "label": "Organizations"
+  },
+  {
+   "fieldname": "default_organization",
+   "fieldtype": "Data",
+   "label": "Default Organization URN",
+   "description": "urn:li:organization:... used when posting as the organization."
+  },
+  {
+   "fieldname": "organizations",
+   "fieldtype": "Table",
+   "label": "Company Pages This Member Manages",
+   "options": "LinkedIn Organization",
+   "read_only": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Account",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LinkedIn Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

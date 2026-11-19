@@ -1,0 +1,14 @@
+root = true
+
+[*]
+indent_style = space
+indent_size = 4
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+
+[*.{js,vue,json,css,html,svg}]
+indent_size = 2
+
+[linkedin_recruitment/**/*.js]
+indent_style = tab

@@ -1,0 +1,39 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  checks:
+    name: Tests and lint
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.14"
+      - name: Unit tests (no bench needed)
+        run: python -m unittest discover -s linkedin_recruitment/tests -t . -v
+      - name: Byte-compile
+        run: python -m compileall -q linkedin_recruitment
+      - name: Lint
+        run: pipx run ruff check linkedin_recruitment --select F,E9
+      - name: Validate JSON records
+        run: |
+          python - <<'EOF'
+          import glob, json, sys
+          bad = []
+          for path in glob.glob("linkedin_recruitment/**/*.json", recursive=True):
+              try:
+                  json.load(open(path, encoding="utf-8"))
+              except ValueError as error:
+                  bad.append(f"{path}: {error}")
+          print("\n".join(bad) or "all JSON valid")
+          sys.exit(1 if bad else 0)
+          EOF

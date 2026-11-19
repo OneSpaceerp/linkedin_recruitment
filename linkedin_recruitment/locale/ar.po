@@ -1,0 +1,289 @@
+# Arabic translations for LinkedIn Recruitment.
+# Copyright (C) 2026 nsdLabs
+msgid ""
+msgstr ""
+"Project-Id-Version: LinkedIn Recruitment\n"
+"Report-Msgid-Bugs-To: info@nsd-eg.com\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "LinkedIn Recruitment"
+msgstr "التوظيف عبر LinkedIn"
+
+msgid "LinkedIn Talent"
+msgstr "مرشحو LinkedIn"
+
+msgid "LinkedIn Sync"
+msgstr "مزامنة LinkedIn"
+
+msgid "LinkedIn Recruitment Setup"
+msgstr "إعداد التوظيف عبر LinkedIn"
+
+msgid "Setup"
+msgstr "الإعداد"
+
+msgid "LinkedIn Settings"
+msgstr "إعدادات LinkedIn"
+
+msgid "LinkedIn Account"
+msgstr "حساب LinkedIn"
+
+msgid "LinkedIn Accounts"
+msgstr "حسابات LinkedIn"
+
+msgid "LinkedIn Job Posting"
+msgstr "وظيفة على LinkedIn"
+
+msgid "LinkedIn Jobs"
+msgstr "وظائف LinkedIn"
+
+msgid "LinkedIn Post"
+msgstr "منشور LinkedIn"
+
+msgid "Company Posts"
+msgstr "منشورات الشركة"
+
+msgid "LinkedIn Applicant"
+msgstr "متقدم من LinkedIn"
+
+msgid "LinkedIn Applicants"
+msgstr "المتقدمون من LinkedIn"
+
+msgid "LinkedIn Applicant Import"
+msgstr "استيراد متقدمي LinkedIn"
+
+msgid "Applicant Imports"
+msgstr "استيراد المتقدمين"
+
+msgid "LinkedIn Sync Log"
+msgstr "سجل مزامنة LinkedIn"
+
+msgid "Sync Log"
+msgstr "سجل المزامنة"
+
+msgid "LinkedIn Webhook Event"
+msgstr "حدث Webhook من LinkedIn"
+
+msgid "Webhook Events"
+msgstr "أحداث Webhook"
+
+msgid "LinkedIn Job Function"
+msgstr "الوظيفة المهنية في LinkedIn"
+
+msgid "Job Functions"
+msgstr "الوظائف المهنية"
+
+msgid "LinkedIn Hiring Funnel"
+msgstr "مسار التوظيف عبر LinkedIn"
+
+msgid "Hiring Funnel"
+msgstr "مسار التوظيف"
+
+msgid "Live LinkedIn Jobs"
+msgstr "وظائف LinkedIn المنشورة"
+
+msgid "LinkedIn Applicants This Month"
+msgstr "متقدمو LinkedIn هذا الشهر"
+
+msgid "LinkedIn Applicants Needing Attention"
+msgstr "متقدمو LinkedIn بحاجة لمراجعة"
+
+msgid "LinkedIn Sync Errors This Week"
+msgstr "أخطاء مزامنة LinkedIn هذا الأسبوع"
+
+msgid "LinkedIn Applicants per Week"
+msgstr "متقدمو LinkedIn أسبوعياً"
+
+msgid "Publish on LinkedIn"
+msgstr "انشر على LinkedIn"
+
+msgid "Update LinkedIn Job"
+msgstr "حدّث وظيفة LinkedIn"
+
+msgid "Close LinkedIn Job"
+msgstr "أغلق وظيفة LinkedIn"
+
+msgid "Announce on LinkedIn"
+msgstr "أعلن على LinkedIn"
+
+msgid "View on LinkedIn"
+msgstr "اعرض على LinkedIn"
+
+msgid "LinkedIn Location"
+msgstr "الموقع في LinkedIn"
+
+msgid "Workplace Type"
+msgstr "نوع مكان العمل"
+
+msgid "Experience Level"
+msgstr "مستوى الخبرة"
+
+msgid "LinkedIn Job Functions"
+msgstr "الوظائف المهنية في LinkedIn"
+
+msgid "LinkedIn Status"
+msgstr "حالة LinkedIn"
+
+msgid "LinkedIn Job"
+msgstr "وظيفة LinkedIn"
+
+msgid "LinkedIn Profile"
+msgstr "ملف LinkedIn"
+
+msgid "LinkedIn Application"
+msgstr "طلب LinkedIn"
+
+msgid "LinkedIn Application ID"
+msgstr "رقم طلب LinkedIn"
+
+msgid "Applied through LinkedIn"
+msgstr "تقدّم عبر LinkedIn"
+
+msgid "Test Connection"
+msgstr "اختبار الاتصال"
+
+msgid "Connect"
+msgstr "ربط"
+
+msgid "Reconnect"
+msgstr "إعادة الربط"
+
+msgid "Disconnect"
+msgstr "فصل"
+
+msgid "Connect a LinkedIn Account"
+msgstr "اربط حساب LinkedIn"
+
+msgid "Create Job Applicant"
+msgstr "أنشئ متقدماً للوظيفة"
+
+msgid "Download Resume"
+msgstr "نزّل السيرة الذاتية"
+
+msgid "Start Import"
+msgstr "ابدأ الاستيراد"
+
+msgid "Import Again"
+msgstr "استورد مرة أخرى"
+
+msgid "Process Again"
+msgstr "عالج مرة أخرى"
+
+msgid "Preview Payload"
+msgstr "معاينة البيانات المرسلة"
+
+msgid "Send Update"
+msgstr "أرسل التحديث"
+
+msgid "Renew"
+msgstr "جدّد"
+
+msgid "Check Status Now"
+msgstr "تحقق من الحالة الآن"
+
+msgid "Delete from LinkedIn"
+msgstr "احذف من LinkedIn"
+
+msgid "Listed"
+msgstr "منشورة"
+
+msgid "In Progress"
+msgstr "قيد التنفيذ"
+
+msgid "Closing"
+msgstr "قيد الإغلاق"
+
+msgid "Imported"
+msgstr "مستورد"
+
+msgid "Duplicate"
+msgstr "مكرر"
+
+msgid "Received"
+msgstr "مستلم"
+
+msgid "Apply with your LinkedIn profile"
+msgstr "تقدّم بملفك على LinkedIn"
+
+msgid "Sign in with LinkedIn"
+msgstr "سجّل الدخول عبر LinkedIn"
+
+msgid "Your application"
+msgstr "طلبك"
+
+msgid "Phone number"
+msgstr "رقم الهاتف"
+
+msgid "CV"
+msgstr "السيرة الذاتية"
+
+msgid "PDF or Word, up to 5 MB."
+msgstr "ملف PDF أو Word حتى 5 ميجابايت."
+
+msgid "Message to the hiring team (optional)"
+msgstr "رسالة إلى فريق التوظيف (اختياري)"
+
+msgid "I agree that my details are stored to process this application."
+msgstr "أوافق على حفظ بياناتي لمعالجة هذا الطلب."
+
+msgid "Send application"
+msgstr "أرسل الطلب"
+
+msgid "Application sent"
+msgstr "تم إرسال الطلب"
+
+msgid "Thank you. The hiring team will contact you by email."
+msgstr "شكراً لك. سيتواصل معك فريق التوظيف عبر البريد الإلكتروني."
+
+msgid "About the role"
+msgstr "عن الوظيفة"
+
+msgid "This job is not available"
+msgstr "هذه الوظيفة غير متاحة"
+
+msgid "The position may have been filled or closed. Thank you for your interest."
+msgstr "ربما تم شغل الوظيفة أو إغلاقها. شكراً لاهتمامك."
+
+msgid "Sign in with LinkedIn to fill in your name and verified email. You add a CV on the next step."
+msgstr "سجّل الدخول عبر LinkedIn لتعبئة اسمك وبريدك الموثق. ستضيف سيرتك الذاتية في الخطوة التالية."
+
+msgid "We receive only your name, profile photo and email address. We never post to LinkedIn for you."
+msgstr "نحصل فقط على اسمك وصورتك وبريدك الإلكتروني، ولا ننشر أي شيء على LinkedIn نيابة عنك."
+
+msgid "Your LinkedIn sign-in expired. Please sign in again."
+msgstr "انتهت صلاحية تسجيل دخولك عبر LinkedIn. يرجى تسجيل الدخول مرة أخرى."
+
+msgid "Please accept the privacy notice to apply."
+msgstr "يرجى الموافقة على إشعار الخصوصية للتقدّم."
+
+msgid "The CV must be smaller than 5 MB."
+msgstr "يجب أن يكون حجم السيرة الذاتية أقل من 5 ميجابايت."
+
+msgid "Sending your application..."
+msgstr "جارٍ إرسال طلبك..."
+
+msgid "Something went wrong. Please try again."
+msgstr "حدث خطأ ما. يرجى المحاولة مرة أخرى."
+
+msgid "You have already applied for this job. We will be in touch."
+msgstr "لقد تقدمت لهذه الوظيفة مسبقاً. سنتواصل معك."
+
+msgid "This job is no longer open."
+msgstr "لم تعد هذه الوظيفة متاحة."
+
+msgid "Upload your CV as PDF, Word, ODT, RTF or text."
+msgstr "ارفع سيرتك الذاتية بصيغة PDF أو Word أو ODT أو RTF أو نص."
+
+msgid "Sent to LinkedIn. It usually goes live within a few minutes."
+msgstr "أُرسلت إلى LinkedIn، وعادةً تُنشر خلال دقائق."
+
+msgid "LinkedIn did not accept the job"
+msgstr "لم يقبل LinkedIn الوظيفة"
+
+msgid "Posted on LinkedIn"
+msgstr "نُشر على LinkedIn"
+
+msgid "The LinkedIn integration is disabled. Enable it in LinkedIn Settings."
+msgstr "تكامل LinkedIn معطّل. فعّله من إعدادات LinkedIn."

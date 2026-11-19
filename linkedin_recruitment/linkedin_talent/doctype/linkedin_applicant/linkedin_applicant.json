@@ -1,0 +1,337 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "LI-APP-.YYYY.-.#####",
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "email_append_to": 0,
+ "engine": "InnoDB",
+ "field_order": [
+  "applicant_name",
+  "email",
+  "phone",
+  "location",
+  "first_name",
+  "last_name",
+  "col1",
+  "status",
+  "source",
+  "job_opening",
+  "job_applicant",
+  "linkedin_section",
+  "profile_url",
+  "member_urn",
+  "job_application_id",
+  "col2",
+  "linkedin_job_posting",
+  "external_job_id",
+  "applied_at",
+  "application_section",
+  "resume",
+  "cover_letter",
+  "col3",
+  "headline",
+  "skills",
+  "work_history",
+  "education",
+  "answers_section",
+  "answers",
+  "processing_section",
+  "error_message",
+  "resume_url",
+  "cover_letter_url",
+  "raw_payload"
+ ],
+ "fields": [
+  {
+   "fieldname": "applicant_name",
+   "fieldtype": "Data",
+   "label": "Applicant Name",
+   "reqd": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "options": "Phone"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location"
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "last_name",
+   "fieldtype": "Data",
+   "label": "Last Name"
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Received\nImported\nDuplicate\nFailed\nIgnored",
+   "default": "Received",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Select",
+   "label": "Received Through",
+   "options": "Apply Connect\nApply with LinkedIn\nFile Import",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "job_opening",
+   "fieldtype": "Link",
+   "label": "Job Opening",
+   "options": "Job Opening",
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "job_applicant",
+   "fieldtype": "Link",
+   "label": "Job Applicant",
+   "options": "Job Applicant",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "linkedin_section",
+   "fieldtype": "Section Break",
+   "label": "LinkedIn"
+  },
+  {
+   "fieldname": "profile_url",
+   "fieldtype": "Data",
+   "label": "LinkedIn Profile",
+   "options": "URL"
+  },
+  {
+   "fieldname": "member_urn",
+   "fieldtype": "Data",
+   "label": "Member URN",
+   "read_only": 1
+  },
+  {
+   "fieldname": "job_application_id",
+   "fieldtype": "Data",
+   "label": "LinkedIn Application ID",
+   "read_only": 1,
+   "unique": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "linkedin_job_posting",
+   "fieldtype": "Link",
+   "label": "LinkedIn Job Posting",
+   "options": "LinkedIn Job Posting",
+   "read_only": 1
+  },
+  {
+   "fieldname": "external_job_id",
+   "fieldtype": "Data",
+   "label": "External Job ID",
+   "read_only": 1
+  },
+  {
+   "fieldname": "applied_at",
+   "fieldtype": "Datetime",
+   "label": "Applied At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "application_section",
+   "fieldtype": "Section Break",
+   "label": "Application"
+  },
+  {
+   "fieldname": "resume",
+   "fieldtype": "Attach",
+   "label": "Resume"
+  },
+  {
+   "fieldname": "cover_letter",
+   "fieldtype": "Text",
+   "label": "Cover Letter"
+  },
+  {
+   "fieldname": "col3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "headline",
+   "fieldtype": "Data",
+   "label": "Headline"
+  },
+  {
+   "fieldname": "skills",
+   "fieldtype": "Small Text",
+   "label": "Skills"
+  },
+  {
+   "fieldname": "work_history",
+   "fieldtype": "Small Text",
+   "label": "Work History"
+  },
+  {
+   "fieldname": "education",
+   "fieldtype": "Small Text",
+   "label": "Education"
+  },
+  {
+   "fieldname": "answers_section",
+   "fieldtype": "Section Break",
+   "label": "Answers",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "answers",
+   "fieldtype": "Code",
+   "label": "Screening Answers",
+   "options": "JSON",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processing_section",
+   "fieldtype": "Section Break",
+   "label": "Processing",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resume_url",
+   "fieldtype": "Small Text",
+   "label": "Resume Link (expires)",
+   "read_only": 1,
+   "permlevel": 1
+  },
+  {
+   "fieldname": "cover_letter_url",
+   "fieldtype": "Small Text",
+   "label": "Cover Letter Link (expires)",
+   "read_only": 1,
+   "permlevel": 1
+  },
+  {
+   "fieldname": "raw_payload",
+   "fieldtype": "Code",
+   "label": "Payload (redacted)",
+   "options": "JSON",
+   "read_only": 1,
+   "permlevel": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Talent",
+ "name": "LinkedIn Applicant",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LinkedIn Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "System Manager"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "LinkedIn Manager"
+  },
+  {
+   "permlevel": 1,
+   "read": 1,
+   "role": "HR Manager"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "applicant_name,email,job_opening",
+ "sender_field": "email",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "applicant_name",
+ "track_changes": 1
+}

@@ -1,0 +1,300 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "autoname": "LI-JOB-.#####",
+ "creation": "2026-11-19 12:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "job_opening",
+  "job_title",
+  "company",
+  "col1",
+  "status",
+  "linkedin_job_url",
+  "applicants",
+  "details_section",
+  "location",
+  "workplace_type",
+  "employment_status",
+  "experience_level",
+  "col2",
+  "listing_type",
+  "job_functions",
+  "industries",
+  "use_apply_connect",
+  "apply_url",
+  "sync_section",
+  "external_job_id",
+  "linkedin_job_urn",
+  "task_urns",
+  "col3",
+  "last_operation",
+  "last_submitted_on",
+  "listed_on",
+  "closed_on",
+  "error_section",
+  "error_message"
+ ],
+ "fields": [
+  {
+   "fieldname": "job_opening",
+   "fieldtype": "Link",
+   "label": "Job Opening",
+   "options": "Job Opening",
+   "reqd": 1,
+   "unique": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title",
+   "fetch_from": "job_opening.job_title",
+   "read_only": 1,
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "fetch_from": "job_opening.company",
+   "read_only": 1,
+   "in_standard_filter": 1
+  },
+  {
+   "fieldname": "col1",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Draft\nQueued\nIn Progress\nListed\nClosing\nClosed\nFailed",
+   "default": "Draft",
+   "read_only": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "allow_on_submit": 0
+  },
+  {
+   "fieldname": "linkedin_job_url",
+   "fieldtype": "Data",
+   "label": "LinkedIn Job",
+   "options": "URL",
+   "read_only": 1
+  },
+  {
+   "fieldname": "applicants",
+   "fieldtype": "Int",
+   "label": "LinkedIn Applicants",
+   "read_only": 1,
+   "default": "0"
+  },
+  {
+   "fieldname": "details_section",
+   "fieldtype": "Section Break",
+   "label": "Job on LinkedIn"
+  },
+  {
+   "fieldname": "location",
+   "fieldtype": "Data",
+   "label": "Location",
+   "reqd": 1,
+   "description": "As LinkedIn should show it: 'City, Country' or just the country for remote jobs."
+  },
+  {
+   "fieldname": "workplace_type",
+   "fieldtype": "Select",
+   "label": "Workplace Type",
+   "options": "On-site\nHybrid\nRemote",
+   "default": "On-site"
+  },
+  {
+   "fieldname": "employment_status",
+   "fieldtype": "Select",
+   "label": "Employment Status",
+   "options": "FULL_TIME\nPART_TIME\nCONTRACT\nINTERNSHIP\nTEMPORARY\nVOLUNTEER\nOTHER",
+   "default": "FULL_TIME"
+  },
+  {
+   "fieldname": "experience_level",
+   "fieldtype": "Select",
+   "label": "Experience Level",
+   "options": "\nENTRY_LEVEL\nASSOCIATE\nMID_SENIOR_LEVEL\nDIRECTOR\nEXECUTIVE\nINTERNSHIP\nNOT_APPLICABLE"
+  },
+  {
+   "fieldname": "col2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "listing_type",
+   "fieldtype": "Select",
+   "label": "Listing Type",
+   "options": "BASIC\nPREMIUM",
+   "default": "BASIC"
+  },
+  {
+   "fieldname": "job_functions",
+   "fieldtype": "Table MultiSelect",
+   "label": "Job Functions",
+   "options": "LinkedIn Job Function Item",
+   "description": "Up to three."
+  },
+  {
+   "fieldname": "industries",
+   "fieldtype": "Data",
+   "label": "Industry Codes",
+   "description": "Comma separated LinkedIn industry ids."
+  },
+  {
+   "fieldname": "use_apply_connect",
+   "fieldtype": "Check",
+   "label": "Receive Applications through Apply Connect"
+  },
+  {
+   "fieldname": "apply_url",
+   "fieldtype": "Data",
+   "label": "Apply URL",
+   "options": "URL",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sync_section",
+   "fieldtype": "Section Break",
+   "label": "Sync",
+   "collapsible": 1
+  },
+  {
+   "fieldname": "external_job_id",
+   "fieldtype": "Data",
+   "label": "External Job ID",
+   "read_only": 1,
+   "unique": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "linkedin_job_urn",
+   "fieldtype": "Data",
+   "label": "LinkedIn Job URN",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "task_urns",
+   "fieldtype": "Small Text",
+   "label": "Pending Task URNs",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "col3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_operation",
+   "fieldtype": "Select",
+   "label": "Last Operation",
+   "options": "\nCREATE\nUPDATE\nRENEW\nCLOSE",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "last_submitted_on",
+   "fieldtype": "Datetime",
+   "label": "Last Submitted On",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "listed_on",
+   "fieldtype": "Datetime",
+   "label": "Listed On",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "closed_on",
+   "fieldtype": "Datetime",
+   "label": "Closed On",
+   "read_only": 1,
+   "no_copy": 1
+  },
+  {
+   "fieldname": "error_section",
+   "fieldtype": "Section Break",
+   "label": "Last Error",
+   "depends_on": "error_message"
+  },
+  {
+   "fieldname": "error_message",
+   "fieldtype": "Small Text",
+   "label": "Error",
+   "read_only": 1,
+   "no_copy": 1
+  }
+ ],
+ "index_web_pages_for_search": 0,
+ "links": [],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Job Posting",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "LinkedIn Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "HR User"
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "job_title,status",
+ "show_title_field_in_link": 1,
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "job_title",
+ "track_changes": 1
+}

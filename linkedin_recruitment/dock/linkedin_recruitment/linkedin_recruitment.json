@@ -1,0 +1,45 @@
+{
+ "app": "linkedin_recruitment",
+ "creation": "2026-11-19 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Dock",
+ "idx": 0,
+ "items": [
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "li-app-soft",
+   "link_to": "LinkedIn Recruitment",
+   "link_type": "Sidebar",
+   "title": "LinkedIn Recruitment"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "li-linkedin-talent-soft",
+   "link_to": "LinkedIn Talent",
+   "link_type": "Sidebar",
+   "title": "LinkedIn Talent"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "li-linkedin-sync-soft",
+   "link_to": "LinkedIn Sync",
+   "link_type": "Sidebar",
+   "title": "LinkedIn Sync"
+  },
+  {
+   "added": 0,
+   "hidden": 0,
+   "icon": "li-setup-soft",
+   "link_to": "LinkedIn Recruitment Setup",
+   "link_type": "Sidebar",
+   "title": "Setup"
+  }
+ ],
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "name": "LinkedIn Recruitment",
+ "owner": "Administrator"
+}

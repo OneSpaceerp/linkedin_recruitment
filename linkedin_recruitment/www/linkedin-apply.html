@@ -1,0 +1,261 @@
+{% extends "templates/web.html" %}
+
+{% block title %}{{ title | e }}{% endblock %}
+
+{% block head_include %}
+<meta name="referrer" content="no-referrer">
+<meta name="robots" content="noindex">
+{% endblock %}
+
+{% block page_content %}
+<style>
+	.li-apply {
+		--li-blue: #0a66c2;
+		--li-blue-strong: #004182;
+		--li-on-blue: #ffffff;
+		--li-surface: #ffffff;
+		--li-canvas: #f4f2ee;
+		--li-ink: #1d1d1f;
+		--li-muted: #5e5e63;
+		--li-line: #dcdad5;
+		--li-good: #057642;
+		--li-bad: #b3261e;
+		--li-radius: 14px;
+		color: var(--li-ink);
+		font-size: 16px;
+		line-height: 1.5;
+		max-width: 680px;
+		margin: 24px auto 64px;
+		padding: 0 16px;
+	}
+	@media (prefers-color-scheme: dark) {
+		.li-apply {
+			--li-blue: #70b5f9;
+			--li-blue-strong: #9ccbfb;
+			--li-on-blue: #0b1a2b;
+			--li-surface: #1b1f23;
+			--li-canvas: #111315;
+			--li-ink: #f2f2f2;
+			--li-muted: #a7a9ac;
+			--li-line: #34383c;
+			--li-good: #5fd39a;
+			--li-bad: #ff8a80;
+		}
+	}
+	.li-apply * { box-sizing: border-box; }
+	.li-card {
+		background: var(--li-surface);
+		border: 1px solid var(--li-line);
+		border-radius: var(--li-radius);
+		padding: 24px;
+		margin-bottom: 16px;
+	}
+	.li-eyebrow { color: var(--li-muted); font-size: 14px; margin: 0 0 4px; }
+	.li-apply h1 { font-size: 28px; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.01em; }
+	.li-apply h2 { font-size: 18px; margin: 0 0 12px; }
+	.li-meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 0; padding: 0; list-style: none; }
+	.li-meta li { background: var(--li-canvas); border-radius: 999px; padding: 4px 12px; font-size: 14px; color: var(--li-muted); }
+	.li-desc { color: var(--li-ink); max-height: 320px; overflow: auto; }
+	.li-desc :is(h1, h2, h3) { font-size: 16px; }
+	.li-btn {
+		display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+		min-height: 48px; padding: 0 22px; border-radius: 999px; border: 0;
+		font-size: 16px; font-weight: 600; text-decoration: none; cursor: pointer;
+		transition: background-color .15s ease, transform .1s ease;
+	}
+	.li-btn:focus-visible, .li-field :is(input, textarea):focus-visible, .li-check input:focus-visible {
+		outline: 3px solid var(--li-blue); outline-offset: 2px;
+	}
+	.li-btn-primary { background: var(--li-blue); color: var(--li-on-blue); width: 100%; }
+	.li-btn-primary:hover { background: var(--li-blue-strong); color: var(--li-on-blue); text-decoration: none; }
+	.li-btn-primary:active { transform: scale(.99); }
+	.li-btn-primary[disabled] { opacity: .6; cursor: progress; }
+	.li-btn img { width: 22px; height: 22px; border-radius: 4px; background: #fff; }
+	.li-note { color: var(--li-muted); font-size: 14px; margin: 12px 0 0; }
+	.li-who { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+	.li-who img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+	.li-who strong { display: block; }
+	.li-who span { color: var(--li-muted); font-size: 14px; }
+	.li-field { margin-bottom: 18px; }
+	.li-field label { display: block; font-weight: 600; margin-bottom: 6px; }
+	.li-field .li-hint { color: var(--li-muted); font-size: 14px; margin: 4px 0 0; }
+	.li-field input[type=tel], .li-field textarea, .li-field input[type=file] {
+		width: 100%; min-height: 48px; padding: 12px 14px; font: inherit; color: var(--li-ink);
+		background: var(--li-surface); border: 1px solid var(--li-line); border-radius: 10px;
+	}
+	.li-field textarea { min-height: 120px; resize: vertical; }
+	.li-check { display: flex; gap: 12px; align-items: flex-start; margin: 8px 0 20px; }
+	.li-check input { width: 22px; height: 22px; margin-top: 2px; flex: none; }
+	.li-privacy { font-size: 14px; color: var(--li-muted); border-top: 1px solid var(--li-line); padding-top: 12px; margin-top: 4px; }
+	.li-status { margin: 12px 0 0; font-weight: 600; min-height: 1.5em; }
+	.li-status.is-error, .li-alert { color: var(--li-bad); }
+	.li-alert { background: var(--li-surface); border: 1px solid currentColor; border-radius: 10px; padding: 12px 14px; margin-bottom: 16px; }
+	.li-done { text-align: center; }
+	.li-done .li-mark { width: 56px; height: 56px; margin: 0 auto 12px; border-radius: 50%; background: var(--li-good); color: var(--li-surface); display: grid; place-items: center; font-size: 30px; }
+	@media (prefers-reduced-motion: reduce) { .li-btn { transition: none; } }
+	@media (max-width: 480px) { .li-card { padding: 18px; } .li-apply h1 { font-size: 24px; } }
+</style>
+
+<main class="li-apply" aria-labelledby="li-title">
+	{% if not job %}
+	<section class="li-card">
+		<h1 id="li-title">{{ _("This job is not available") }}</h1>
+		<p>{{ _("The position may have been filled or closed. Thank you for your interest.") }}</p>
+	</section>
+	{% else %}
+
+	<section class="li-card">
+		<p class="li-eyebrow">{{ job.company | e }}</p>
+		<h1 id="li-title">{{ job.job_title | e }}</h1>
+		<ul class="li-meta">
+			{% if location %}<li>{{ location | e }}</li>{% endif %}
+			{% if job.employment_type %}<li>{{ _(job.employment_type) | e }}</li>{% endif %}
+		</ul>
+	</section>
+
+	{% if error %}<div class="li-alert" role="alert">{{ _("LinkedIn sign-in did not finish:") }} {{ error | e }}</div>{% endif %}
+	{% if expired %}<div class="li-alert" role="alert">{{ _("Your LinkedIn sign-in expired. Please sign in again.") }}</div>{% endif %}
+
+	{% if not identity %}
+	<section class="li-card" aria-labelledby="li-signin">
+		<h2 id="li-signin">{{ _("Apply with your LinkedIn profile") }}</h2>
+		<p>{{ _("Sign in with LinkedIn to fill in your name and verified email. You add a CV on the next step.") }}</p>
+		<a class="li-btn li-btn-primary" href="{{ start_url | e }}" rel="nofollow">
+			<img src="{{ logo }}" alt="" aria-hidden="true">{{ _("Sign in with LinkedIn") }}
+		</a>
+		<p class="li-note">{{ _("We receive only your name, profile photo and email address. We never post to LinkedIn for you.") }}</p>
+	</section>
+	{% else %}
+	<section class="li-card" id="li-form-card" aria-labelledby="li-form-title">
+		<h2 id="li-form-title">{{ _("Your application") }}</h2>
+		<div class="li-who">
+			{% if identity.picture %}<img src="{{ identity.picture | e }}" alt="">{% endif %}
+			<div><strong>{{ identity.name | e }}</strong><span>{{ identity.email | e }}</span></div>
+		</div>
+		<form id="li-form" novalidate>
+			<div class="li-field">
+				<label for="li-phone">{{ _("Phone number") }}</label>
+				<input id="li-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" maxlength="40">
+			</div>
+			<div class="li-field">
+				<label for="li-cv">{{ _("CV") }}</label>
+				<input id="li-cv" name="cv" type="file" accept=".pdf,.doc,.docx,.odt,.rtf,.txt" aria-describedby="li-cv-hint">
+				<p class="li-hint" id="li-cv-hint">{{ _("PDF or Word, up to 5 MB.") }}</p>
+			</div>
+			<div class="li-field">
+				<label for="li-letter">{{ _("Message to the hiring team (optional)") }}</label>
+				<textarea id="li-letter" name="cover_letter" maxlength="10000"></textarea>
+			</div>
+			{% if require_consent %}
+			<label class="li-check">
+				<input type="checkbox" id="li-consent" name="consent" required>
+				<span>{{ _("I agree that my details are stored to process this application.") }}</span>
+			</label>
+			{% if privacy_notice %}<div class="li-privacy">{{ privacy_notice }}</div>{% endif %}
+			{% endif %}
+			<button class="li-btn li-btn-primary" id="li-submit" type="submit">{{ _("Send application") }}</button>
+			<p class="li-status" id="li-status" role="status" aria-live="polite"></p>
+		</form>
+	</section>
+	<section class="li-card li-done" id="li-done" hidden tabindex="-1" aria-labelledby="li-done-title">
+		<div class="li-mark" aria-hidden="true">&#10003;</div>
+		<h2 id="li-done-title">{{ _("Application sent") }}</h2>
+		<p id="li-done-text">{{ _("Thank you. The hiring team will contact you by email.") }}</p>
+	</section>
+	{% endif %}
+
+	{% if description_html %}
+	<section class="li-card" aria-labelledby="li-about">
+		<h2 id="li-about">{{ _("About the role") }}</h2>
+		<div class="li-desc">{{ description_html }}</div>
+	</section>
+	{% endif %}
+	{% endif %}
+</main>
+
+{% if identity and job %}
+<script>
+(function () {
+	const form = document.getElementById("li-form");
+	const status = document.getElementById("li-status");
+	const button = document.getElementById("li-submit");
+	const text = {
+		consent: {{ _("Please accept the privacy notice to apply.") | tojson }},
+		size: {{ _("The CV must be smaller than 5 MB.") | tojson }},
+		sending: {{ _("Sending your application...") | tojson }},
+		failed: {{ _("Something went wrong. Please try again.") | tojson }},
+		already: {{ _("You have already applied for this job. We will be in touch.") | tojson }}
+	};
+
+	function readFile(file) {
+		return new Promise((resolve, reject) => {
+			const reader = new FileReader();
+			reader.onload = () => resolve(reader.result);
+			reader.onerror = () => reject(reader.error);
+			reader.readAsDataURL(file);
+		});
+	}
+
+	function serverMessage(body) {
+		try {
+			const list = JSON.parse(body._server_messages || "[]");
+			return list.map((m) => JSON.parse(m).message).join(" ").replace(/<[^>]+>/g, "");
+		} catch (e) {
+			return "";
+		}
+	}
+
+	function fail(message) {
+		status.textContent = message;
+		status.classList.add("is-error");
+		button.disabled = false;
+	}
+
+	form.addEventListener("submit", async (event) => {
+		event.preventDefault();
+		status.classList.remove("is-error");
+		const consent = document.getElementById("li-consent");
+		if (consent && !consent.checked) { consent.focus(); return fail(text.consent); }
+		const file = document.getElementById("li-cv").files[0];
+		if (file && file.size > 5 * 1024 * 1024) { return fail(text.size); }
+
+		button.disabled = true;
+		status.textContent = text.sending;
+		const payload = {
+			job: {{ job.name | tojson }},
+			token: {{ token | tojson }},
+			phone: form.phone.value,
+			cover_letter: form.cover_letter.value,
+			consent: consent && consent.checked ? 1 : 0
+		};
+		try {
+			if (file) {
+				payload.file_name = file.name;
+				payload.file_data = await readFile(file);
+			}
+			const response = await fetch("/api/method/linkedin_recruitment.api.apply.submit", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+					"Accept": "application/json",
+					"X-Frappe-CSRF-Token": {{ csrf_token | tojson }}
+				},
+				body: JSON.stringify(payload)
+			});
+			const body = await response.json().catch(() => ({}));
+			if (!response.ok) { return fail(serverMessage(body) || text.failed); }
+			document.getElementById("li-form-card").hidden = true;
+			const done = document.getElementById("li-done");
+			if (body.message && body.message.created === false) {
+				document.getElementById("li-done-text").textContent = text.already;
+			}
+			done.hidden = false;
+			done.focus();
+		} catch (e) {
+			fail(text.failed);
+		}
+	});
+})();
+</script>
+{% endif %}
+{% endblock %}

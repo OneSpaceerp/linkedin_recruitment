@@ -1,0 +1,142 @@
+[
+ {
+  "code": "acct",
+  "function_name": "Accounting / Auditing"
+ },
+ {
+  "code": "adm",
+  "function_name": "Administrative"
+ },
+ {
+  "code": "advr",
+  "function_name": "Advertising"
+ },
+ {
+  "code": "anls",
+  "function_name": "Analyst"
+ },
+ {
+  "code": "art",
+  "function_name": "Art / Creative"
+ },
+ {
+  "code": "bd",
+  "function_name": "Business Development"
+ },
+ {
+  "code": "cnsl",
+  "function_name": "Consulting"
+ },
+ {
+  "code": "cust",
+  "function_name": "Customer Service"
+ },
+ {
+  "code": "dist",
+  "function_name": "Distribution"
+ },
+ {
+  "code": "dsgn",
+  "function_name": "Design"
+ },
+ {
+  "code": "edu",
+  "function_name": "Education"
+ },
+ {
+  "code": "eng",
+  "function_name": "Engineering"
+ },
+ {
+  "code": "fin",
+  "function_name": "Finance"
+ },
+ {
+  "code": "genb",
+  "function_name": "General Business"
+ },
+ {
+  "code": "hcpr",
+  "function_name": "Health Care Provider"
+ },
+ {
+  "code": "hr",
+  "function_name": "Human Resources"
+ },
+ {
+  "code": "it",
+  "function_name": "Information Technology"
+ },
+ {
+  "code": "lgl",
+  "function_name": "Legal"
+ },
+ {
+  "code": "mgmt",
+  "function_name": "Management"
+ },
+ {
+  "code": "mnfc",
+  "function_name": "Manufacturing"
+ },
+ {
+  "code": "mrkt",
+  "function_name": "Marketing"
+ },
+ {
+  "code": "othr",
+  "function_name": "Other"
+ },
+ {
+  "code": "pr",
+  "function_name": "Public Relations"
+ },
+ {
+  "code": "prch",
+  "function_name": "Purchasing"
+ },
+ {
+  "code": "prdm",
+  "function_name": "Product Management"
+ },
+ {
+  "code": "prjm",
+  "function_name": "Project Management"
+ },
+ {
+  "code": "prod",
+  "function_name": "Production"
+ },
+ {
+  "code": "qa",
+  "function_name": "Quality Assurance"
+ },
+ {
+  "code": "rsch",
+  "function_name": "Research"
+ },
+ {
+  "code": "sale",
+  "function_name": "Sales"
+ },
+ {
+  "code": "sci",
+  "function_name": "Science"
+ },
+ {
+  "code": "stra",
+  "function_name": "Strategy / Planning"
+ },
+ {
+  "code": "supl",
+  "function_name": "Supply Chain"
+ },
+ {
+  "code": "trng",
+  "function_name": "Training"
+ },
+ {
+  "code": "wrt",
+  "function_name": "Writing / Editing"
+ }
+]

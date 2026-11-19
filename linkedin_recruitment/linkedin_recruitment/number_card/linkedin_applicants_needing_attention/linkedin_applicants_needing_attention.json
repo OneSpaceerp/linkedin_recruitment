@@ -1,0 +1,23 @@
+{
+ "aggregate_function_based_on": "",
+ "color": "#B24020",
+ "creation": "2026-11-19 12:00:00.000000",
+ "docstatus": 0,
+ "doctype": "Number Card",
+ "document_type": "LinkedIn Applicant",
+ "dynamic_filters_json": "[]",
+ "filters_json": "[[\"LinkedIn Applicant\", \"status\", \"in\", [\"Received\", \"Failed\"]]]",
+ "function": "Count",
+ "idx": 0,
+ "is_public": 1,
+ "is_standard": 1,
+ "label": "LinkedIn Applicants Needing Attention",
+ "modified": "2026-11-19 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "LinkedIn Recruitment",
+ "name": "LinkedIn Applicants Needing Attention",
+ "owner": "Administrator",
+ "show_percentage_stats": 1,
+ "stats_time_interval": "Weekly",
+ "type": "Document Type"
+}
